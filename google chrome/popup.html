@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    button {
+      height: 20px;
+      width: 100%;
+      outline: none;
+    }
+
+    .w50 {
+      width: 50px;
+    }
+
+    .w100 {
+      width: 100px;
+    }
+
+    .w {
+      width: 100%;
+    }
+
+    .padding_right {
+      padding-right: 3px;
+    }
+
+    .padding_top {
+      padding-top: 3px;
+    }
+
+    .padding_top_20 {
+      padding-top: 20px;
+    }
+
+    .margin_top {
+      margin-top: 5px;
+    }
+
+    .padding_left {
+      padding-left: 3px;
+    }
+
+    .f_left {
+      float: left;
+    }
+
+    .f_right {
+      float: right;
+    }
+
+    .container {
+      width: 110px;
+    }
+  </style>
+  <!-- changeColor -->
+</head>
+
+<body>
+  <h2>Configure</h2>
+  <center class="container">
+
+    <div class="w">
+      <input type="range" min="1" max="100" value="50" class="slider w" id="range_modal_height">
+    </div>
+    <div class="w">
+      <input type="range" min="1" max="100" value="50" class="slider w" id="range_modal_width">
+    </div>
+    <div class="f_left w50">
+      <input type="number" placeholder="Height" class="w" id="modal_height"></input>
+    </div>
+    <div class="f_right w50">
+      <input type="number" placeholder="Width" class="w" id="modal_width"></input>
+    </div>
+
+    <div class="w margin_top padding_top_20">
+      <button class="w" value="#DBEEDD" style='background-color:#DBEEDD' id="Color1">Color</button>
+    </div>
+    <div class="w">
+      <button class="w" value="#e7eedb" style='background-color:#e7eedb' id="Color2">Color</button>
+    </div>
+    <div class="w">
+      <button class="w" value="#dbe5ee" style='background-color:#dbe5ee' id="Color3">Color</button>
+    </div>
+    <!-- <div class="w">
+      <input type="text" placeholder="default Url" class="w margin_top" id="iframe_url"></input>
+    </div> -->
+  </center>
+  <script src="popup.js"></script>
+</body>
+
+</html>
