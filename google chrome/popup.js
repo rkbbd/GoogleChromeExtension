@@ -13,39 +13,30 @@ let Color3 = document.getElementById("Color3");
 // });
 Color1.onclick = function(element) {
   let color = element.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.executeScript(tabs[0].id, {
-      code: 'document.body.style.backgroundColor = "' + color + '";'
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.executeScript(tabs[0].id, {
+            code: 'document.body.style.backgroundColor = "' + color + '";'
+        });
     });
-  });
-  setStorage("color", color);
-  // chrome.storage.sync.set({ color: color2 }, function() {
-  //   console.log("color is " + color2);
-  // });
+    setStorage("color", color);
 };
 Color2.onclick = function(element) {
   let color2 = element.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.executeScript(tabs[0].id, {
-      code: 'document.body.style.backgroundColor = "' + color2 + '";'
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.executeScript(tabs[0].id, {
+            code: 'document.body.style.backgroundColor = "' + color2 + '";'
+        });
     });
-  });
-  setStorage("color", color2);
-  // chrome.storage.sync.set({ color: color2 }, function() {
-  //   console.log("color is " + color2);
-  // });
+    setStorage("color", color2);
 };
 Color3.onclick = function(element) {
   let color3 = element.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.executeScript(tabs[0].id, {
-      code: 'document.body.style.backgroundColor = "' + color3 + '";'
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.executeScript(tabs[0].id, {
+            code: 'document.body.style.backgroundColor = "' + color3 + '";'
+        });
     });
-  });
-  setStorage("color", color3);
-  // chrome.storage.sync.set({ color: color3 }, function() {
-  //   console.log("color is " + color3);
-  // });
+    setStorage("color", color3);
 };
 //----------------------Color End----------------------------
 
@@ -54,26 +45,26 @@ let modalHeight = document.getElementById("modal_height");
 let range_modalHeight = document.getElementById("range_modal_height");
 
 modalHeight.onkeyup = function(element) {
-  if (element.keyCode == 13) {
-    let modal_Height = element.target.value;
-    changeModalHeight(modal_Height + "px");
-  }
+    if (element.keyCode == 13) {
+      let modal_Height = element.target.value;
+        changeModalHeight(modal_Height + "px");
+    }
 };
 
 range_modalHeight.oninput = function(element) {
   let modal_Height = element.target.value;
-  changeModalHeight(modal_Height + "%");
+    changeModalHeight(modal_Height + "%");
 };
 
 function changeModalHeight(modal_Height) {
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.executeScript(tabs[0].id, {
-      code:
-        'document.getElementById("modal_content").style.height  ="' +
-        modal_Height +
-        '";'
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.executeScript(tabs[0].id, {
+            code:
+              'document.getElementById("modal_content").style.height  ="' +
+              modal_Height +
+              '";'
+        });
     });
-  });
 }
 //----------------------Height End----------------------------
 
@@ -82,46 +73,60 @@ let modalWidth = document.getElementById("modal_width");
 let range_modalWidth = document.getElementById("range_modal_width");
 
 modalWidth.onkeyup = function(element) {
-  if (element.keyCode == 13) {
-    let modal_Width = element.target.value;
-    changeModalWidth(modal_Width + "px");
-  }
+    if (element.keyCode == 13) {
+      let modal_Width = element.target.value;
+        changeModalWidth(modal_Width + "px");
+    }
 };
 
 range_modalWidth.oninput = function(element) {
   let modal_Width = element.target.value;
-  changeModalWidth(modal_Width + "%");
+    changeModalWidth(modal_Width + "%");
 };
 
 function changeModalWidth(modal_Width) {
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.executeScript(tabs[0].id, {
-      code:
-        'document.getElementById("modal_content").style.width  ="' +
-        modal_Width +
-        '";'
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.executeScript(tabs[0].id, {
+            code:
+              'document.getElementById("modal_content").style.width  ="' +
+              modal_Width +
+              '";'
+        });
     });
-  });
 }
 //----------------------Width End----------------------------
 
 //----------------------URL Start-------------------------
-// let iframeUrl = document.getElementById("iframe_url");
+ 
+let turnOffWindow = document.getElementById("turnOffWindow");
+turnOffWindow.onclick=function(e){
+   
+    if (e.target.checked != false)
+    {
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            chrome.tabs.executeScript(tabs[0].id, {
+                code:
+                  'document.getElementById("modal_content").style.display  ="none"'
+            });
+        });
+        setStorage("windowFeature", "false");
+    }else{
+        setStorage("windowFeature", "true");
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            chrome.tabs.executeScript(tabs[0].id, {
+                code:
+                  'document.getElementById("modal_content").style.display  ="block"'
+            });
+        });
+    }
+    
+}
 
-// iframeUrl.onkeyup = function(element) {
-//   if (element.keyCode == 13) {
-//     var iframe_Url = element.target.value;
-//     changeIFrameUrl(iframe_Url);
-//   }
-// };
-
-// function changeIFrameUrl(url) {
-//   setStorage("url", url);
-// }
+ 
 // //----------------------Width End----------------------------
 
-// function setStorage(name, value) {
-//   chrome.storage.sync.set({ name: value }, function() {
-//     console.log("color is " + value);
-//   });
-// }
+function setStorage(name, value) {
+    chrome.storage.sync.set({ name: value }, function() {
+        console.log("color is " + value);
+    });
+}

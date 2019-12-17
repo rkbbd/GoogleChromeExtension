@@ -1,7 +1,15 @@
 chrome.storage.sync.get("color", function(data) {
   document.body.style.backgroundColor = data.color;
   if (!document.getElementById("modal_content")) {
-    createIframe();
+      //var windowFeature = "";
+      //chrome.storage.sync.get("windowFeature", function (data) {
+      //    windowFeature = data.windowFeature;
+      //});
+      //alert(windowFeature);
+      //if (windowFeature === "true") {
+      //   // createIframe();
+      //}
+      createIframe();
   }
 });
 
@@ -42,14 +50,16 @@ function createIframe() {
     const url = this.value;
     var urlNew = "";
     if (e.keyCode == 13) {
-      var youtube = url.toLowerCase().includes("youtube");
+        var utube = url.toLowerCase();
+        var youtube = utube.includes("youtube");
+       
       if (youtube) {
         var va = getParameterByName("v", url);
         urlNew = "https://www.youtube.com/embed/" + va;
       } else {
         urlNew = url;
       }
-      urlNew += "&autoplay=1";
+      //urlNew += "&autoplay=1";
       document.getElementById("modal_iframe").remove();
       var modal_iframe = document.createElement("iframe");
       modal_iframe.setAttribute("id", "modal_iframe");
