@@ -1,0 +1,1 @@
+<img src="https://github.com/rakib434/GoogleChromeExtension/blob/datatables/demo/example.PNG" style="max-width:100%;">
