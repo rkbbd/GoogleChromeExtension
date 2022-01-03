@@ -1,5 +1,5 @@
 ## Capture Table and Redesign 
-### Scrape <table/> data from any website and export it into Excel, Word, pdf format. 
+Scrape <table/> data from any website and export it into Excel, Word, pdf format. 
 
 **Capture Table and Redesign** gives you the ability to easily capture HTML tables for use in a spreadsheet, whether using Microsoft Excel, Office 365, Open Office, Google Sheets, etc.
 
