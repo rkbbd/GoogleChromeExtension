@@ -1,5 +1,5 @@
 ## Capture Table and Redesign 
-Scrape <table/> data from any website and export it into Excel, Word, pdf format. 
+***Scrape <table '/> data from any website and export it into Excel, Word, pdf format.***
 
 **Capture Table and Redesign** gives you the ability to easily capture HTML tables for use in a spreadsheet, whether using Microsoft Excel, Office 365, Open Office, Google Sheets, etc.
 
@@ -40,7 +40,7 @@ Loading an unpacked extension
 
 Ta-da! The extension has been successfully installed. Because no icons were included in the manifest, a generic icon will be created for the extension.
 
-browse any website which contain  <table/>
+browse any website which contain  <table'/>
 ex: https://www.w3schools.com/html/html_tables.asp 
 <img src="https://github.com/rakib434/GoogleChromeExtension/blob/datatables/demo/example.PNG" style="max-width:100%;">
 
